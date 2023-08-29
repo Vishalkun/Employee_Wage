@@ -9,12 +9,14 @@
             const int IS_FULL_TIME = 2;
            const int Emp_Rate_Per_Hour = 20;
             const int NO_OF_WORKING_DAYS = 2;
+            const int MAX_HOURS_IN_MONTH = 10;
 
             int empHrs = 0;
-            int empWage = 0;
-            int totalEmpWage =0;
-            for (int day = 1; day < NO_OF_WORKING_DAYS; day++)
+            int totalEmpHours = 0;
+            int totalWorkingDays =0;
+            while (totalEmpHours<= MAX_HOURS_IN_MONTH  && totalWorkingDays< NO_OF_WORKING_DAYS)
             {
+                totalWorkingDays++;
                 Random R = new Random();
                 int empcheck = new Random().Next(0, 3);
 
@@ -24,19 +26,20 @@
                         empHrs = 4;
                         break;
                     case IS_FULL_TIME:
-                        empWage = 8;
+                        empHrs = 8;
                         break;
                     default:
                         empHrs = 0;
                         break;
                 }
-                empWage = empHrs * Emp_Rate_Per_Hour;
-                totalEmpWage += empWage;
-                Console.WriteLine("Emp Wage :" + empWage);
+                totalEmpHours += empHrs;
+                Console.WriteLine("Day#:" + totalWorkingDays + " Emp Hrs :" + empHrs);
             }
-            Console.WriteLine(" TotalEmpWage :" + totalEmpWage);
+            int totalEmpWage = totalEmpHours * Emp_Rate_Per_Hour;
+                Console.WriteLine(" Total Emp Wage :" + totalEmpWage);
 
         }
 
     }
+
 }
