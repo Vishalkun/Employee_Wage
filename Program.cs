@@ -20,7 +20,7 @@
                     empHrs=4;
                     break;
                 case IS_FULL_TIME :
-                    empWage=8;
+                    empHrs=8;
                     break;
                 default:
                     empHrs = 0;
