@@ -5,25 +5,26 @@
         static void Main(string[] args)
         {
             
-            int IS_PART_TIME = 1;
-            int IS_FULL_TIME = 2;
-            int Emp_Rate_Per_Hour = 20;
+          const  int IS_PART_TIME = 1;
+            const int IS_FULL_TIME = 2;
+           const int Emp_Rate_Per_Hour = 20;
 
             int empHrs = 0;
             int empWage = 0;
             Random R=new Random();  
-            int empcheck= new Random().Next(0,2);
-            if(empcheck== IS_PART_TIME)
+            int empcheck= new Random().Next(0,3);
+            
+            switch(empcheck)
             {
-                empHrs = 4;
-            }
-            else if(empcheck== IS_FULL_TIME)
-            {
-                empHrs = 8;
-            }
-            else
-            {
-                empHrs = 0;
+                case IS_PART_TIME :
+                    empHrs=4;
+                    break;
+                case IS_FULL_TIME :
+                    empWage=8;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
             }
             empWage = empHrs * Emp_Rate_Per_Hour;
             Console.WriteLine("Emp Wage :" + empWage);
