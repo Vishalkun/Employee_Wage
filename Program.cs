@@ -4,7 +4,12 @@ using System.Linq.Expressions;
 
 namespace CalculateEmpWages
 {
-
+    public interface IComputeEmpWage
+    {
+        public void addCompanyEmpWage(string compnay, int wage_per_hour, int no_of_working_days, int max_hrs_in_month);
+        public void ComputeEmpWage();
+        public void getTotalWage();
+    }
     public class CompanyEmpWage
     {
         public string company;
